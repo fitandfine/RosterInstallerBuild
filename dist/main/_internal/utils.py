@@ -1,11 +1,11 @@
-import os, sys
+# utils.py
+import os
 
-def resource_path(relative_path):
+def get_appdata_dir():
     """
-    Get the absolute path to a resource, working in both dev and PyInstaller bundles.
+    Returns a consistent app-specific folder in %APPDATA%.
+    Creates it if it doesn't exist.
     """
-    if hasattr(sys, '_MEIPASS'):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.abspath(os.path.dirname(__file__))
-    return os.path.join(base_path, relative_path)
+    path = os.path.join(os.environ.get("APPDATA"), "BP_Eltham_Roster")
+    os.makedirs(path, exist_ok=True)
+    return path

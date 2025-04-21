@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('init_setup\\\\init_setup.exe', 'init_setup'), ('dashboard.py', '.'), ('login.py', '.'), ('utils.py', '.'), ('pdf_generator.py', '.')],
+    datas=[('dashboard.py', '.'), ('login.py', '.'), ('pdf_generator.py', '.'), ('utils.py', '.'), ('init_setup/init_setup.exe', 'init_setup')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

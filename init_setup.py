@@ -2,14 +2,14 @@ import sqlite3
 import os
 import sys
 
-# Get install directory from argument or fallback
-if len(sys.argv) > 1:
-    BASE_DIR = sys.argv[1]
-else:
-    BASE_DIR = os.path.dirname(os.path.abspath(sys.executable if getattr(sys, 'frozen', False) else __file__))
 
+
+# Use a central writable location (like %APPDATA%/BP_ElthamRoster/)
+BASE_DIR = os.path.join(os.environ.get("APPDATA"), "BP_Eltham_Roster")
+os.makedirs(BASE_DIR, exist_ok=True)
 DB = os.path.join(BASE_DIR, "roster.db")
 ROSTERSDIR = os.path.join(BASE_DIR, "Rosters")
+
 os.makedirs(ROSTERSDIR, exist_ok=True)
 
 

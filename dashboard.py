@@ -13,19 +13,11 @@ import pdf_generator                 # ← your own module
 
 
 
-import sys
-
-if getattr(sys, 'frozen', False):
-    BASE_DIR = os.path.dirname(sys.executable)
-else:
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-DB = os.path.join(BASE_DIR, "roster.db")
-
-ROSTERSDIR = os.path.join(BASE_DIR, "Rosters") 
-
+APPDATA_DIR = os.path.join(os.getenv("APPDATA"), "BP_Eltham_Roster")
+DB = os.path.join(APPDATA_DIR, "roster.db")
+ROSTERSDIR = os.path.join(APPDATA_DIR, "Rosters")
 os.makedirs(ROSTERSDIR, exist_ok=True)
-os.makedirs(ROSTERSDIR, exist_ok=True)
+
 
 
 try:
