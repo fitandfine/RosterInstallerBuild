@@ -1,6 +1,6 @@
 📝 Roster Management System
 
-1. Run RosterManagerInstaller.exe to install the software.
+1. Run installer from dist folder.
 2. The program will initialize an empty database and create a 'Rosters' folder.
 3. Login:
    Username: admin
